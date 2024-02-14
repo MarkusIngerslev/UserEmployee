@@ -16,7 +16,7 @@ public class Employee {
     private boolean vegetarian;
 
     @OneToOne
-    @JoinColumn(name = "useridfk", referencedColumnName = "userID")
+    @JoinColumn(name = "useridfk", referencedColumnName = "userID", nullable = false)
     private User user;
 
     public User getUser() {
