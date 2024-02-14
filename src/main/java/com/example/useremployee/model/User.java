@@ -13,6 +13,17 @@ public class User {
     private String email;
     private String password;
 
+    @OneToOne(mappedBy = "user")
+    private Employee employee;
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
     public int getUserID() {
         return userID;
     }
