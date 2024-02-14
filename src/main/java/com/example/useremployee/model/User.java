@@ -1,6 +1,7 @@
 package com.example.useremployee.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 @Entity
@@ -13,7 +14,8 @@ public class User {
     private String email;
     private String password;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(cascade = CascadeType.ALL,mappedBy = "user")
+    @JsonBackReference
     private Employee employee;
 
     public Employee getEmployee() {
