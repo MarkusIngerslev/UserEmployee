@@ -16,6 +16,8 @@ public class InitData  implements CommandLineRunner {
 
     @Autowired
     UserRepository userRepository;
+
+    @Autowired
     EmployeeRepository employeeRepository;
     @Override
     public void run(String... args) throws Exception {
