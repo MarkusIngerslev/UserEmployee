@@ -6,9 +6,7 @@ import jakarta.persistence.*;
 public class Unicode {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int unicode;
-    @Column(unique = true)
     private char bogstav;
     @Column(length = 500)
     private String description;
