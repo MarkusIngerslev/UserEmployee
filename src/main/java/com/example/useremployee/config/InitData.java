@@ -4,6 +4,7 @@ import com.example.useremployee.model.Employee;
 import com.example.useremployee.model.Gender;
 import com.example.useremployee.model.User;
 import com.example.useremployee.repositories.EmployeeRepository;
+import com.example.useremployee.repositories.UnicodeRepository;
 import com.example.useremployee.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,6 +20,9 @@ public class InitData  implements CommandLineRunner {
 
     @Autowired
     EmployeeRepository employeeRepository;
+
+    @Autowired
+    UnicodeRepository unicodeRepository;
     @Override
     public void run(String... args) throws Exception {
         User usl1 = new User();
@@ -34,6 +38,9 @@ public class InitData  implements CommandLineRunner {
         emp1.setVegetarian(true);
         emp1.setUser(usl1);
         employeeRepository.save(emp1);
+
+
+        // Unicode JPA Opgave Step 6
 
     }
 }
