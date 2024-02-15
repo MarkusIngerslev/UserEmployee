@@ -4,6 +4,7 @@ import com.example.useremployee.model.Employee;
 import com.example.useremployee.repositories.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -16,6 +17,12 @@ public class EmployeeRestController {
     @GetMapping("/employees")
     public List<Employee> getUsers() {
         return employeeRepository.findAll();
+    }
+
+    @GetMapping("/unicode/{i}")
+    public String unicodeToChar(@PathVariable int i) {
+        char c = (char)i;
+        return "unicode = " + i + " char = " + c;
     }
 
 
